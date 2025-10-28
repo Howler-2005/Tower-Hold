@@ -13,6 +13,13 @@ public class TURRET : MonoBehaviour
 
     public string enemyTag = "Enemy";
 
+    public float fireRate = 1f;
+    private float fireCountdown = 0f;
+
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
@@ -33,7 +40,7 @@ public class TURRET : MonoBehaviour
         foreach (GameObject enemy in enemies)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (shortestDistance <= shortestDistance)
+            if (distanceToEnemy <= shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
                 nearestEnemy = enemy;
@@ -63,7 +70,33 @@ public class TURRET : MonoBehaviour
         Vector3 rotation = Quaternion.Lerp(cannon.rotation,lookRotation,Time.deltaTime * turnSpeed).eulerAngles;
         cannon.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
+        if(fireCountdown <= 0f)
+        {
+            Shoot();
+            fireCountdown = 1f / fireRate;
+        }
+
+        fireCountdown -= Time.deltaTime;
+
+
     }
+
+    void Shoot()
+    {
+        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Bullet bullet = bulletGO.GetComponent<Bullet>();
+
+        if (bullet != null)
+        {
+            bullet.Seek(target);
+        }
+
+
+
+
+    }
+
+
 
 
 }

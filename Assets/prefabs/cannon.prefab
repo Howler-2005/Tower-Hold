@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3327289592475791898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7612053310314789006}
+  m_Layer: 0
+  m_Name: firepoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7612053310314789006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3327289592475791898}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: -13.9001465, y: 0, z: 8.500004}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4562727646842725711}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7644365736095399576
 GameObject:
   m_ObjectHideFlags: 0
@@ -49,6 +80,9 @@ MonoBehaviour:
   cannon: {fileID: 1843141489835468129}
   turnSpeed: 10
   enemyTag: Enemy
+  fireRate: 1
+  bulletPrefab: {fileID: 6272480731518199505, guid: 349780f637e9524409565f10f839e3b4, type: 3}
+  firePoint: {fileID: 7612053310314789006}
 --- !u!1001 &4562727646842863567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -119,7 +153,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 400000, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7612053310314789006}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
 --- !u!4 &4562727646842725711 stripped
