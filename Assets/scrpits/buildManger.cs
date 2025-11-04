@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class buildManger : MonoBehaviour
 {
-    private GameObject turretToBuild;
+    public GameObject turretToBuild;
 
     public static buildManger instance;
 
     public GameObject standardTurretPrefab;
+
     private void Awake()
     {
         if (instance != null)
@@ -17,17 +18,15 @@ public class buildManger : MonoBehaviour
 
         instance = this;
     }
-
-    private void Start()
+   
+    public void SetTurretToBuild(GameObject turret)
     {
-        turretToBuild = standardTurretPrefab;
+        turretToBuild = turret;
     }
-
-
     public GameObject GetTurretToBuild ()
     {
         return turretToBuild;
     }
-
+    
 
 }

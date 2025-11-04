@@ -1,5 +1,6 @@
    using UnityEngine;
 
+
 public class Node : MonoBehaviour
 {
     public Color hoverColor;
@@ -7,8 +8,9 @@ public class Node : MonoBehaviour
     public Vector3 positionOffSet;
 
     public GameObject turret;
-
     
+    buildManger BuildManger;
+
 
     private Renderer rend;
     
@@ -21,18 +23,28 @@ public class Node : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (BuildManger.GetTurretToBuild() == null)
+        {
+            return;
+        }
+
+
         if (turret != null)
         {
             Debug.Log("cant build here");
             return;
         }
 
-        GameObject turretToBuild = buildManger.instance.GetTurretToBuild();
+        GameObject turretToBuild = BuildManger.GetTurretToBuild();
         turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffSet, transform.rotation);
     }
 
     private void OnMouseEnter()
     {
+        if (BuildManger.GetTurretToBuild() == null)
+        {
+            return;
+        }
         rend.material.color = hoverColor;
     }
 
