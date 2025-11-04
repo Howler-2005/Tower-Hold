@@ -3573,7 +3573,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0, g: 1, b: 0.9495225, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 1, g: 0.078984864, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -3594,16 +3594,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 95abbfb70598c3643b31de2702d52ebe, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
+      - m_Target: {fileID: 922648047}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: PurchaseArrowTurret
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: PurchaseArrowTurret()
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &473630516
@@ -13952,6 +13952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47e2da58cdcc69441be1ceee0c852815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turretToBuild: {fileID: 0}
   standardTurretPrefab: {fileID: 7644365736095399576, guid: bad9db55574561c45843d52c045b43a2, type: 3}
 --- !u!1001 &2017282348
 PrefabInstance:
