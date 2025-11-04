@@ -7,7 +7,6 @@ public class buildManger : MonoBehaviour
     public static buildManger instance;
 
     public GameObject standardTurretPrefab;
-
     private void Awake()
     {
         if (instance != null)
