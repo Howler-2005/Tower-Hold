@@ -19,6 +19,7 @@ public class Node : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
+        BuildManger = buildManger.instance;
     }
 
     private void OnMouseDown()
@@ -37,8 +38,10 @@ public class Node : MonoBehaviour
 
         GameObject turretToBuild = BuildManger.GetTurretToBuild();
         turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffSet, transform.rotation);
+        BuildManger.SetTurretToBuild(null);
     }
 
+    
     private void OnMouseEnter()
     {
         if (BuildManger.GetTurretToBuild() == null)
