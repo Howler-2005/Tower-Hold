@@ -332,7 +332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 10
   cannon: {fileID: 112474934708655961}
-  turnSpeed: 15
+  turnSpeed: 20
   enemyTag: Enemy
   fireRate: 3
   bulletPrefab: {fileID: 212494173998113553, guid: 982fcbccf3dfb3448a1de021098fd69e, type: 3}
