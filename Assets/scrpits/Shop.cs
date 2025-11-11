@@ -18,6 +18,7 @@ public class Shop : MonoBehaviour
     public void PurchaseCannonTurret()
     {
         Debug.Log("Cannon Tower purchase");
+        BuildManger.SetTurretToBuild(BuildManger.SecondTowerPrefab);
     }
 
     public void PurchaseMagicTurret()
