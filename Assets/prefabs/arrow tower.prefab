@@ -330,11 +330,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a622a5fad22354a9ed5ce6a5a49825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 15
+  range: 10
   cannon: {fileID: 112474934708655961}
-  turnSpeed: 10
+  turnSpeed: 15
   enemyTag: Enemy
-  fireRate: 1
+  fireRate: 3
   bulletPrefab: {fileID: 212494173998113553, guid: 982fcbccf3dfb3448a1de021098fd69e, type: 3}
   firePoint: {fileID: 6084770396836106708}
 --- !u!1 &5245169617272575762
