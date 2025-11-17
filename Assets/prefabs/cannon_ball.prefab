@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8902457823837590638}
   - component: {fileID: 872188719540102456}
   - component: {fileID: 5869539975937538598}
-  - component: {fileID: 6155763422973158919}
   - component: {fileID: 5336837219415307320}
   m_Layer: 0
   m_Name: cannon_ball
@@ -88,27 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6155763422973158919
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6272480731518199505}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5336837219415307320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,4 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cfb04b118b300c4eaa2dfcd25dc2f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 70
+  impactEffect: {fileID: 358637981425055526, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
+  explostionRadius: 10
+  speed: 50
