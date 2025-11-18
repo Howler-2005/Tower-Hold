@@ -83,7 +83,7 @@ public class Bullet : MonoBehaviour
         Destroy(enemy.gameObject);
         PlayerStats.Money += 100;
 
-        Debug.Log("money gained: 100");
+        Debug.Log("money gained: 100 ; total money : " + PlayerStats.Money);
 
    
     }
