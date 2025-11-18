@@ -24,7 +24,7 @@ public class Node : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (BuildManger.GetTurretToBuild() == null)
+        if(!BuildManger.CanBuild)
         {
             return;
         }
@@ -36,19 +36,14 @@ public class Node : MonoBehaviour
             return;
         }
 
-        GameObject turretToBuild = BuildManger.GetTurretToBuild();
-        turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffSet, transform.rotation);
-        BuildManger.SetTurretToBuild(null);
+        BuildManger.BuildTurretOn(this);
+        
         
     }
 
     
     private void OnMouseEnter()
     {
-        if (BuildManger.GetTurretToBuild() == null)
-        {
-            return;
-        }
         rend.material.color = hoverColor;
     }
 
@@ -56,5 +51,11 @@ public class Node : MonoBehaviour
     {
         rend.material.color = startColor; 
     }
+
+    public Vector3 GetBuildPosition()
+    {
+        return transform.position + positionOffSet;
+    }
+
 
 }

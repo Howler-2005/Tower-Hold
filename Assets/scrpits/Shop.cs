@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
+
+    public turretBlueprint arrowTower;
+    public turretBlueprint Cannon;
+
+
     buildManger BuildManger;
 
     private void Start()
@@ -9,21 +14,18 @@ public class Shop : MonoBehaviour
         BuildManger = buildManger.instance;
     }
 
-    public void PurchaseArrowTurret()
+    public void SelectarrowTower()
     {
         Debug.Log("Arrow Tower purchase");
-        BuildManger.SetTurretToBuild(BuildManger.standardTurretPrefab);
+        BuildManger.SelectTurretToBuild(arrowTower);
     }
 
-    public void PurchaseCannonTurret()
+    public void SelectCannonTower()
     {
         Debug.Log("Cannon Tower purchase");
-        BuildManger.SetTurretToBuild(BuildManger.SecondTowerPrefab);
+        BuildManger.SelectTurretToBuild(Cannon);
     }
 
-    public void PurchaseMagicTurret()
-    {
-        Debug.Log("Magic Tower purchase");
-    }
+   
 
 }
