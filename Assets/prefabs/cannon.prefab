@@ -80,7 +80,7 @@ MonoBehaviour:
   cannon: {fileID: 1843141489835468129}
   turnSpeed: 5
   enemyTag: Enemy
-  fireRate: 0.5
+  fireRate: 0.25
   bulletPrefab: {fileID: 6272480731518199505, guid: 349780f637e9524409565f10f839e3b4, type: 3}
   firePoint: {fileID: 7612053310314789006}
 --- !u!1001 &4562727646842863567

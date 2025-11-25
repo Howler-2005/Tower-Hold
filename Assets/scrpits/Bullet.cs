@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 public class Bullet : MonoBehaviour
 {
-
+    public int attack;
     private Transform target;
     public GameObject impactEffect;
     public float explostionRadius;
@@ -80,10 +80,12 @@ public class Bullet : MonoBehaviour
     
     void Damage(Transform enemy)
     {
-        Destroy(enemy.gameObject);
-        PlayerStats.Money += 10;
+        enemyAI e = enemy.GetComponent<enemyAI>();
 
-        
+        if (e != null)
+        {
+            e.TakeDamage(attack);
+        }
 
    
     }
