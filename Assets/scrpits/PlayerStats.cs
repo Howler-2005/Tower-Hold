@@ -30,7 +30,7 @@ public class PlayerStats : MonoBehaviour
     void wavecountdown()
     {
 
-        count.text = "Next wave : " + Count.ToString();
+        count.text = "Next wave : " + Mathf.Round(Count).ToString();
 
         if (Count <= 0f)
         {
