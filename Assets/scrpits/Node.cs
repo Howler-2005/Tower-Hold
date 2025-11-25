@@ -3,6 +3,7 @@
 
 public class Node : MonoBehaviour
 {
+    public Color notEnoughMoney;
     public Color hoverColor;
     private Color startColor;
     public Vector3 positionOffSet;
@@ -44,7 +45,19 @@ public class Node : MonoBehaviour
     
     private void OnMouseEnter()
     {
-        rend.material.color = hoverColor;
+        if (!BuildManger.CanBuild)
+        {
+            return;
+        }
+        if (BuildManger.HasMoney)
+        {
+            rend.material.color = hoverColor;
+        }
+        else
+        {
+            rend.material.color = notEnoughMoney;
+        }
+       
     }
 
     private void OnMouseExit()
