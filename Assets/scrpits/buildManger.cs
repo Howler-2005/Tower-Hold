@@ -11,6 +11,8 @@ public class buildManger : MonoBehaviour
 
     public GameObject CannonPrefab;
 
+    public GameObject MageTowerPrefab;
+
     private void Awake()
     {
         if (instance != null)

@@ -9,7 +9,7 @@ public class enemyAI : MonoBehaviour
     private Transform target;
     private int wavepointIndex = 0;
 
-    public int Health;
+    public float Health;
 
     public GameObject deathEffect;
 

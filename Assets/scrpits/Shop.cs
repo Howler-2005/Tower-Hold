@@ -5,6 +5,7 @@ public class Shop : MonoBehaviour
 
     public turretBlueprint arrowTower;
     public turretBlueprint Cannon;
+    public turretBlueprint MageTower;
 
 
     buildManger BuildManger;
@@ -26,6 +27,10 @@ public class Shop : MonoBehaviour
         BuildManger.SelectTurretToBuild(Cannon);
     }
 
-   
+    public void SelectMageTower()
+    {
+        Debug.Log("Mage Tower selected");
+        BuildManger.SelectTurretToBuild(MageTower);
+    }
 
 }

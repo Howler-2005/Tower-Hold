@@ -19,6 +19,8 @@ public class TURRET : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
 
+    public bool useLaser = false;
+    public LineRenderer linerenderer;
 
     private void OnDrawGizmosSelected()
     {

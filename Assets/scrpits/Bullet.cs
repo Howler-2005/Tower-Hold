@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -8,7 +9,8 @@ public class Bullet : MonoBehaviour
     public GameObject impactEffect;
     public float explostionRadius;
     public float speed = 70f;
-    
+    public float duration;
+    public bool AOE;
 
     public void Seek (Transform _target)
     {
@@ -42,18 +44,23 @@ public class Bullet : MonoBehaviour
    private void HitTarget()
    {
       
-        
-
-        if (explostionRadius > 0f)
+        if (AOE)
         {
             GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
-            Destroy(effectIns, 1f);
+            Destroy(effectIns, duration);
+            Aoe();
+
+        }
+        else if (explostionRadius > 0f)
+        {
+            GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
+            Destroy(effectIns, duration);
             Explode();
         }
         else
         {
             GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
-            Destroy(effectIns, 2f);
+            Destroy(effectIns, duration);
             Damage(target);
         }
 
@@ -78,6 +85,23 @@ public class Bullet : MonoBehaviour
 
     }
     
+    void Aoe()
+    {
+
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explostionRadius);
+        foreach (Collider collider in colliders)
+        {
+            if (collider.tag == "Enemy")
+            {
+        
+                Damage(collider.transform);
+            }
+
+
+        }
+
+
+    }
     void Damage(Transform enemy)
     {
         enemyAI e = enemy.GetComponent<enemyAI>();
