@@ -1,9 +1,20 @@
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
 
-    private bool gameEnded = false;
+    public static bool gameEnded;
+
+    public GameObject gameOverUI;
+
+   
+    private void Start()
+    {
+        gameOverUI.SetActive(false);
+        gameEnded = false;
+    }
 
     private void Update()
     {
@@ -12,16 +23,24 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        if(Input.GetKeyDown("e"))
+        {
+            EndGame();
+        }
+
         if (PlayerStats.Lives <= 0)
         {
             EndGame();
         }
+
+        
     }
 
     void EndGame()
     {
         gameEnded = true;
-        Debug.Log("GAME OVER");
+
+        gameOverUI.SetActive(true);
     }
 
 

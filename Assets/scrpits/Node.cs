@@ -7,14 +7,21 @@ public class Node : MonoBehaviour
     public Color hoverColor;
     private Color startColor;
     public Vector3 positionOffSet;
-
+    public Color placed;
     public GameObject turret;
     
     buildManger BuildManger;
 
 
     private Renderer rend;
-    
+
+    private void Update()
+    {
+        if (turret != null)
+        {
+            rend.material.color = placed;
+        }
+    }
 
     private void Start()
     {
