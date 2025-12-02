@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     {
         gameOverUI.SetActive(false);
         gameEnded = false;
+        SceneManager.LoadScene("mainmenu");
     }
 
     private void Update()
