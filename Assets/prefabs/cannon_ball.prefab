@@ -103,4 +103,5 @@ MonoBehaviour:
   impactEffect: {fileID: 358637981425055526, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
   explostionRadius: 8
   speed: 50
-  duration: 2
+  duration: 1
+  AOE: 0
